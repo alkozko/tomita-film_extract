@@ -1,0 +1,9 @@
+encoding "utf8";
+
+import "base.proto";
+import "articles_base.proto";
+
+TAuxDicArticle "фильм"
+{
+    key = { "tomita:film.cxx" type=CUSTOM }
+}
