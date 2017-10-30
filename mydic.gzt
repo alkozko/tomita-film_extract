@@ -5,6 +5,12 @@ import "articles_base.proto";
 
 import "facttypes.proto";
 
+TAuxDicArticle "жанр"
+{
+    key = "комедия"
+    key = "боевик"
+}
+
 TAuxDicArticle "фильм"
 {
     key = { "tomita:film.cxx" type=CUSTOM }
