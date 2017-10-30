@@ -25,7 +25,8 @@ Name -> Word<h-reg1, ~fw, nc-agr[1]> Word<h-reg1, nc-agr[1]>*;
 SW_HACK -> Prep Noun NP;  
 
 Director -> Name<gram="род"> interp (Film.Director);
-Director -> Comma 'снять' <gram="прич"> Name<gram="твор"> interp (Film.Director);
+Director -> Comma 'снять' <gram="прич"> (NP) Name<gram="твор"> interp (Film.Director);
+Director -> 'режиссер'<gram="род"> Name interp (Film.Director);
 
 S -> FilmTitle Hyphen* FilmDescriptor (Date interp (Film.Date)) (SW_HACK) (Director);
 S -> FilmDescriptor (Director) FilmTitle;
