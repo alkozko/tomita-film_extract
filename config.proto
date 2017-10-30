@@ -5,6 +5,9 @@ TTextMinerConfig {
   Articles = [
     { Name = "фильм" }        
   ],
+  Facts = [
+    { Name = "Film" }
+  ],
   Input = { 
     File = "input\\movies.txt";
   }
