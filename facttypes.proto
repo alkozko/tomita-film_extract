@@ -4,4 +4,5 @@ import "facttypes_base.proto";
 message Film: NFactType.TFact
 {
     required string Name = 1;
+    optional string Genre = 2;
 }
