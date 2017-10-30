@@ -9,5 +9,7 @@ GenreDescr -> Word<kwtype="жанр"> | Word<wff=/фильм-.+/> | Adj "фил�
 Genre -> Adj* GenreDescr;
 FilmDescriptor -> Genre interp(Film.Genre) | "фильм";
 
-S -> Title interp(Film.Name::not_norm) Hyphen* FilmDescriptor;
-S -> FilmDescriptor Title interp(Film.Name::not_norm);
+FilmTitle -> Title interp(Film.Name::not_norm);
+FilmTitle -> FilmTitle "и" FilmTitle;
+S -> FilmTitle Hyphen* FilmDescriptor;
+S -> FilmDescriptor FilmTitle;
