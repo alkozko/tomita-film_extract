@@ -15,3 +15,8 @@ TAuxDicArticle "фильм"
 {
     key = { "tomita:film.cxx" type=CUSTOM }
 }
+
+TAuxDicArticle "даты"
+{
+    key = { "tomita:dates.cxx" type=CUSTOM }
+}
