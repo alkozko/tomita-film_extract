@@ -18,6 +18,7 @@ FilmTitle -> FilmTitle "и" FilmTitle;
 Name -> Word<h-reg1, ~fw, nc-agr[1]> Word<h-reg1, nc-agr[1]>*;
 
 Director -> Name<gram="род"> interp (Film.Director);
+Director -> Comma 'снять' <gram="прич"> Name<gram="твор"> interp (Film.Director);
 
-S -> FilmTitle Hyphen* FilmDescriptor (Date interp (Film.Date));
+S -> FilmTitle Hyphen* FilmDescriptor (Date interp (Film.Date)) (Director);
 S -> FilmDescriptor (Director) FilmTitle;
