@@ -1,6 +1,10 @@
 #encoding "utf-8"
 #GRAMMAR_ROOT S
 
+NP -> Noun;
+NP -> Adj<nc-agr[1]> NP<nc-agr[1], rt>;
+NP -> NP<nc-agr[1]> Adj<nc-agr[1]>;
+
 //Даты
 Date -> AnyWord<kwtype="даты">;
 
@@ -17,8 +21,11 @@ FilmTitle -> FilmTitle "и" FilmTitle;
 
 Name -> Word<h-reg1, ~fw, nc-agr[1]> Word<h-reg1, nc-agr[1]>*;
 
+//Хак для звездных войн
+SW_HACK -> Prep Noun NP;  
+
 Director -> Name<gram="род"> interp (Film.Director);
 Director -> Comma 'снять' <gram="прич"> Name<gram="твор"> interp (Film.Director);
 
-S -> FilmTitle Hyphen* FilmDescriptor (Date interp (Film.Date)) (Director);
+S -> FilmTitle Hyphen* FilmDescriptor (Date interp (Film.Date)) (SW_HACK) (Director);
 S -> FilmDescriptor (Director) FilmTitle;
