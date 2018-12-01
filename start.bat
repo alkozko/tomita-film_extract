@@ -1,0 +1,1 @@
+tomitaparser.exe config.proto
